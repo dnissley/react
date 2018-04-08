@@ -1,6 +1,6 @@
 # React Examples
 
-![React.js Logo](./logo.png "React.js Logo")
+![React.js Logo](./react.png "React.js Logo")
 
 Examples related to react.js. Mostly created using the create-react-app utility.
 
