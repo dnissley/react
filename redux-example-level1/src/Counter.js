@@ -6,10 +6,10 @@ import { incrementCounter, decrementCounter, renameCounter } from './actions';
 class Counter extends Component {
   constructor(props) {
     super(props);
-    this.rename = this.rename.bind(this);
+    this.renameCounter = this.renameCounter.bind(this);
   }
 
-  rename() {
+  renameCounter() {
     const newName = prompt("Please enter the new name for the counter.", this.props.name);
 
     if (newName === null || newName === "") {
@@ -26,7 +26,7 @@ class Counter extends Component {
         <h1>{this.props.count}</h1>
         <button onClick={this.props.onIncrement}>+1</button>
         <button onClick={this.props.onDecrement}>-1</button>
-        <button onClick={this.rename}>rename</button>
+        <button onClick={this.renameCounter}>rename</button>
       </div>
     );
   }

@@ -8,11 +8,11 @@ const initialState = {
 export default function (state = initialState, action) {
   switch(action.type) {
     case INCREMENT:
-      return { name: state.name, count: state.count + 1 };
+      return { count: state.count + 1, name: state.name };
     case DECREMENT:
-      return { name: state.name, count: state.count - 1 };
+      return { count: state.count - 1, name: state.name };
     case RENAME:
-      return { name: action.name, count: state.count };
+      return { count: state.count, name: action.name };
     default:
       return state;
   }

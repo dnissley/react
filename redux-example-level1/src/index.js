@@ -1,12 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { connect, Provider } from 'react-redux';
-import './index.css';
 import { Counter, ConnectedCounter } from './Counter';
 import reducer from './reducer';
 import { incrementCounter, decrementCounter, renameCounter } from './actions';
-import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(reducer);
 
@@ -33,7 +32,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
-
-registerServiceWorker();
-

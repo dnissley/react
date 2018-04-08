@@ -1,14 +1,14 @@
 import { INCREMENT, DECREMENT, RENAME } from './actionKeys';
 
-export const increment = () => {
+export const incrementCounter = () => {
   return { type: INCREMENT };
 };
 
-export const decrement = () => {
+export const decrementCounter = () => {
   return { type: DECREMENT };
 };
 
-export const rename = (name) => {
+export const renameCounter = (name) => {
   return { type: RENAME, name };
 };
 
