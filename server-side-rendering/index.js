@@ -4,17 +4,19 @@ const renderer = require('./renderer');
 
 const app = express();
 
-app.get('/', (req, res) => {
+const beginHtmlResponse = (req, res, next) => {
   res.type('text/html');
   res.write('<!DOCTYPE html>');
+  next();
+};
+
+app.get('/', beginHtmlResponse, (req, res) => {
   renderer.toPromise().then((html) => {
     res.end(html);
   });
 });
 
-app.get('/streaming', (req, res) => {
-  res.type('text/html');
-  res.write('<!DOCTYPE html>');
+app.get('/streaming', beginHtmlResponse, (req, res) => {
   const stream = renderer.toStream();
   stream.pipe(res, { end: false });
   stream.on('end', () => res.end());
