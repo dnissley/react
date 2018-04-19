@@ -11,13 +11,13 @@ const beginHtmlResponse = (req, res, next) => {
 };
 
 app.get('/', beginHtmlResponse, (req, res) => {
-  renderer('a cache key').toPromise().then((html) => {
+  renderer('some cache key relevant to this route').toPromise().then((html) => {
     res.end(html);
   });
 });
 
 app.get('/streaming', beginHtmlResponse, (req, res) => {
-  const stream = renderer('a cache key').toStream();
+  const stream = renderer('some cache key relevant to this route').toStream();
   stream.pipe(res, { end: false });
   stream.on('end', () => res.end());
 });
